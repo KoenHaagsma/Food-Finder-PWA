@@ -1,0 +1,27 @@
+{
+    "name": "Food Finder PWA",
+    "version": "0.0.1",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/KoenHaagsma/Food-Finder-PWA.git"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "pug"
+    ],
+    "author": "Koen Haagsma",
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "pug": "^3.0.2",
+        "request": "^2.88.2"
+    }
+}
