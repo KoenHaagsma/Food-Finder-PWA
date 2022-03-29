@@ -28,16 +28,21 @@
 
 2. Clone the repository
 ```
-git clone https://github.com/KoenHaagsma/Healty-food-helper.git
+git clone https://github.com/KoenHaagsma/Food-Finder-PWA.git
 ```
 3. Go to the cloned repository
 ```
-cd ../../Healty-food-helper
+cd ../../TFood-Finder-PWA
 ```
-4. Start application with [Live-Server in VSCODE](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+4. Install all packages
 ```
-Right bottom: 'Go live'
+npm install || npm i
 ```
+5. Start the application for development
+```
+npm run dev
+```
+6. Open de server and go to the browser: [Localhost](http://localhost:3000/). If this doesn't work change your port to another port
 
 ## 📑 Sources
 
