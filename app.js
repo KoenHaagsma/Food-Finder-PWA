@@ -9,9 +9,23 @@ app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-    res.render('index', {
-        pageTitle: 'Dit is een express pagina',
-    });
+    res.render('index');
+});
+
+app.get('/scanner', function (req, res) {
+    res.render('scanner');
+});
+
+app.get('/manual', function (req, res) {
+    res.render('manualInput');
+});
+
+app.get('/details/:id', function (req, res) {
+    res.render('details');
+});
+
+app.get('/error', function (req, res) {
+    res.render('error404');
 });
 
 app.set('port', process.env.PORT || 8000);
