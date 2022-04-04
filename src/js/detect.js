@@ -1,4 +1,3 @@
-import Utils from '../helpers/Utils.js';
 let _scannerRunning = false;
 
 const detect = {

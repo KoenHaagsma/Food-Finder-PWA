@@ -2,3 +2,13 @@
 extends ./layouts/layout.pug
 
 block content
+    section.section.scanner 
+        .header-container 
+            h1 Food Finder 
+            p Scan the product 
+        .container
+            section.loading-container
+                img(src="../public/images/Preloader_3.gif", alt="Loading GIF")
+                p Scanner is loading...
+        .link_container
+            button Code invoeren

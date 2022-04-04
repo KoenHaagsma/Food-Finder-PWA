@@ -1,5 +1,6 @@
-require('dotenv').config();
 const express = require('express');
+require('dotenv').config();
+const fetch = require('node-fetch');
 
 const app = express();
 
@@ -8,28 +9,58 @@ app.set('views', './views');
 
 app.use(express.static('public'));
 
-app.get('/', function (req, res) {
-    res.render('index');
+app.get('/', (req, res) => {
+    res.render('index', {
+        prefix: process.env.PREFIX,
+    });
 });
 
-app.get('/scanner', function (req, res) {
-    res.render('scanner');
+app.get('/scanner', (req, res) => {
+    res.render('scanner', {
+        prefix: process.env.PREFIX,
+    });
 });
 
-app.get('/manual', function (req, res) {
-    res.render('manualInput');
+app.get('/manual', (req, res) => {
+    res.render('manualInput', {
+        prefix: process.env.PREFIX,
+    });
 });
 
-app.get('/details/:id', function (req, res) {
-    res.render('details');
+app.get('/details/:id', async (req, res) => {
+    const code = req.params.code;
+    await fetch(`https://world.openfoodfacts.org/api/v0/product/${code}`)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            if (data.status === 0 || data.product.ingredients === undefined || data.product.ingredients.length === 0) {
+                res.render('errorPage', {
+                    prefix: process.env.PREFIX,
+                });
+            } else {
+                res.render('details', {
+                    product: data.product,
+                });
+            }
+        });
 });
 
-app.get('/error', function (req, res) {
-    res.render('error404');
+app.get('/offline', (req, res) => {
+    res.render('offline');
 });
 
-app.set('port', process.env.PORT || 8000);
+app.get('/error', (req, res) => {
+    res.render('errorPage', {
+        prefix: process.env.PREFIX,
+    });
+});
 
-const server = app.listen(app.get('port'), function () {
-    console.log(`Application started on port: ${app.get('port')}`);
+app.use((req, res) => {
+    res.status(404).render('error404', {
+        prefix: process.env.PREFIX,
+    });
+});
+
+app.listen(process.env.PORT, () => {
+    console.log(`Application started on port: http://localhost:${process.env.PORT}`);
 });
