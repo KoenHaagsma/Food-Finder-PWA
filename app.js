@@ -46,7 +46,9 @@ app.get('/details/:id', async (req, res) => {
 });
 
 app.get('/offline', (req, res) => {
-    res.render('offline');
+    res.render('offline', {
+        prefix: process.env.PREFIX,
+    });
 });
 
 app.get('/error', (req, res) => {

@@ -11,8 +11,8 @@ if ('serviceWorker' in navigator) {
 if (window.location.pathname === '/scanner') {
     const buttons = document.querySelectorAll('button');
     const div = document.querySelector('.container');
-    const url = 'https://world.openfoodfacts.org/api/v0/product/';
     detect.start(`.${div.className}`, (result) => {
         console.log(result);
+        location.href = `/details/${result}`;
     });
 }
