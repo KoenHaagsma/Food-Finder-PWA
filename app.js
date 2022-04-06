@@ -44,21 +44,33 @@ app.get('/results', async (req, res) => {
     } else {
         let counter = 1;
         counter = parseInt(req.query.counter);
-        await fetch(`https://world.openfoodfacts.org/category/${req.query.product}/${counter}.json`)
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data.products);
-                res.render('results', {
-                    prefix: process.env.PREFIX,
-                    products: data,
-                    placeholderProduct: req.query.product,
-                    count: data.count,
+
+        // Got from: https://github.com/lisannevvliet/ethical-food-checker-pwa/blob/main/main.js
+        const barcode = /^\d+$/.test(req.query.product);
+        const url = barcode
+            ? `https://world.openfoodfacts.org/api/v0/product/${req.query.product}`
+            : `https://world.openfoodfacts.org/category/${req.query.product}/${counter}.json`;
+
+        if (!barcode) {
+            await fetch(url)
+                .then((res) => res.json())
+                .then((data) => {
+                    res.render('results', {
+                        prefix: process.env.PREFIX,
+                        products: data,
+                        placeholderProduct: req.query.product,
+                        count: data.count,
+                        page: counter,
+                        totalPage: Math.ceil(data.count / data.page_size),
+                    });
+                })
+                .catch((err) => {
+                    res.redirect('/error');
+                    console.error(err);
                 });
-            })
-            .catch((err) => {
-                res.redirect('/errorPage');
-                console.error(err);
-            });
+        } else {
+            res.redirect(`/details/${req.query.product}`);
+        }
     }
 });
 
@@ -72,7 +84,6 @@ app.get('/details/:id', async (req, res) => {
                     prefix: process.env.PREFIX,
                 });
             } else {
-                console.log(data.product.product);
                 res.render('details', {
                     product: data.product,
                 });

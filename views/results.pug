@@ -6,7 +6,6 @@ block content
         h1(class="active") Fill in product name or code name
         form#product-form(method="get" action="/results")
             input#product-code(type="text" name="product" value=placeholderProduct required)
-            input(type="hidden" name="counter" value="1")
             button#product-submit(type="submit" form="product-form" value="submit") Search
         .sort-container
         section.content
@@ -16,6 +15,7 @@ block content
                     h1 Product is not found 
                     p Please try again
             else 
+                p.page= "page: " + page
                 p.count= count + " products found"
                 ul.products
                     each value, key in products.products
@@ -27,10 +27,11 @@ block content
                                         li= value.product_name
                                         b Nutrition grade:
                                             li= value.nutrition_grades
-                                            
-                                        
-
-
-
+            if counter != 0
+                form(method="get" action="/results" class="page-form")
+                    input( type="hidden" name="product" value=placeholderProduct)
+                    label( for="page") Page
+                    input(type="number" id="page" name="counter" value=page + 1 placeholder=page min="1" max=totalPage required)
+                    button(type="submit") Go to page
         .link-container
             a(href="/scanner") Scan product

@@ -297,6 +297,7 @@ h1 {
 .manual-input > .content > .count {
     font-size: 0.75rem;
     color: var(--black);
+    margin-left: 0.5rem;
 }
 
 .manual-input > .content > .loading-products {
@@ -806,4 +807,16 @@ h1 {
 
 .manual-input > .content > .results-error > h1 {
     margin-top: 1rem;
+}
+
+.page-form {
+    margin: 0.5rem 0 3rem 0.5rem;
+}
+
+.page-form > label {
+    margin-right: 0.25rem;
+}
+
+.page {
+    margin-left: 0.5rem;
 }
