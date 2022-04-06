@@ -1,0 +1,11 @@
+extends ./layouts/layout.pug
+
+block content
+    section.section.manual-input 
+        h1 Fill in product name or code name
+        form#product-form(method="get" action="/results")
+            input#product-code(type="text" placeholder="Product code/name" name="product" required)
+            input(type="hidden" name="counter" value="1")
+            button#product-submit(type="submit" form="product-form" value="submit") Search
+        .link-container
+            a(href="/scanner") Scan product

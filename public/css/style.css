@@ -449,7 +449,7 @@ h1 {
 /* https://cssgradient.io/ */
 .manual-input > .link-container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     padding: 2rem;
     position: fixed;
@@ -457,7 +457,6 @@ h1 {
     left: 0;
     right: 0;
     margin: auto;
-    max-width: calc(900px - 3rem);
     background: rgb(255, 255, 255);
     background: -moz-linear-gradient(
         180deg,
@@ -485,9 +484,10 @@ h1 {
     background-color: var(--green);
     text-decoration: none;
     display: flex;
-    width: 80%;
+    width: 100%;
     justify-content: center;
     align-items: center;
+    max-width: 500px;
 }
 
 .manual-input > .link-container > a > img {
@@ -792,5 +792,18 @@ h1 {
 }
 
 .errorpage > a:last-child {
+    margin-top: 1rem;
+}
+
+.manual-input > .content > .results-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.manual-input > .content > .results-error > h1 {
     margin-top: 1rem;
 }

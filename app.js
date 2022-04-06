@@ -32,25 +32,31 @@ app.get('/scanner', (req, res) => {
     });
 });
 
-app.get('/manual', async (req, res) => {
-    const code = req.query;
-    let counter = 1;
-    console.log(code.product);
-    if (code === undefined || code.length === 0) {
-        res.render('manualInput', {
-            prefix: process.env.PREFIX,
-        });
+app.get('/manual', (req, res) => {
+    res.render('manual', {
+        prefix: process.env.PREFIX,
+    });
+});
+
+app.get('/results', async (req, res) => {
+    if (req.query === undefined || req.query.length === 0) {
+        res.redirect('/manual');
     } else {
-        await fetch(`https://world.openfoodfacts.org/category/${code.product}/${counter}.json`)
+        let counter = 1;
+        counter = parseInt(req.query.counter);
+        await fetch(`https://world.openfoodfacts.org/category/${req.query.product}/${counter}.json`)
             .then((res) => res.json())
             .then((data) => {
                 console.log(data.products);
-                res.render('manualInput', {
+                res.render('results', {
                     prefix: process.env.PREFIX,
-                    products: data.products,
+                    products: data,
+                    placeholderProduct: req.query.product,
+                    count: data.count,
                 });
             })
             .catch((err) => {
+                res.redirect('/errorPage');
                 console.error(err);
             });
     }
@@ -61,8 +67,7 @@ app.get('/details/:id', async (req, res) => {
     await fetch(`https://world.openfoodfacts.org/api/v0/product/${code}`)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
-            if (data.status === 0 || data.product.ingredients === undefined || data.product.ingredients.length === 0) {
+            if (data.status === 0) {
                 res.render('errorPage', {
                     prefix: process.env.PREFIX,
                 });

@@ -1,6 +1,6 @@
-const CORE_CACHE_VERSION = 'core-v3.1';
-const DYNAMIC_CACHE_VERSION = 'dynamic-v3.1';
-const CACHE_FILES = ['/css/style.min.css', '/js/manifest.json', '/js/main.min.js', '/offline'];
+const CORE_CACHE_VERSION = 'core-v3.3.3';
+const DYNAMIC_CACHE_VERSION = 'dynamic-v3.3.3';
+const CACHE_FILES = ['/css/style.min.css', '/manifest.json', '/js/main.min.js', '/offline'];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(caches.open(CORE_CACHE_VERSION).then((cache) => cache.addAll(CACHE_FILES)));

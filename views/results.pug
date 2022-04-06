@@ -1,0 +1,36 @@
+//- results.pug
+extends ./layouts/layout.pug
+
+block content
+    section.section.manual-input 
+        h1(class="active") Fill in product name or code name
+        form#product-form(method="get" action="/results")
+            input#product-code(type="text" name="product" value=placeholderProduct required)
+            input(type="hidden" name="counter" value="1")
+            button#product-submit(type="submit" form="product-form" value="submit") Search
+        .sort-container
+        section.content
+            if products.count === 0 
+                div.results-error
+                    img(src="/images/Question.png")
+                    h1 Product is not found 
+                    p Please try again
+            else 
+                p.count= count + " products found"
+                ul.products
+                    each value, key in products.products
+                        li.list-item-li 
+                            a.list-item(href="/details/" + value._id) 
+                                .inside 
+                                    img(src=value.image_url)
+                                    article.details-products 
+                                        li= value.product_name
+                                        b Nutrition grade:
+                                            li= value.nutrition_grades
+                                            
+                                        
+
+
+
+        .link-container
+            a(href="/scanner") Scan product

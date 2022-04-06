@@ -4,7 +4,8 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon app.js",
+        "start": "node app.js",
+        "dev": "nodemon app.js",
         "minify": "npm run minify-js && npm run minify-css",
         "minify-js": "minify ./public/js/main.js > ./public/js/main.min.js && minify ./public/js/detect.js > ./public/js/detect.min.js && minify ./public/service-worker.js > ./public/service-worker.min.js",
         "minify-css": "minify ./public/css/style.css > ./public/css/style.min.css"

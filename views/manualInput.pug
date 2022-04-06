@@ -1,9 +1,0 @@
-//- manualInput.pug
-extends ./layouts/layout.pug
-
-block content
-    section.section.manual-input 
-        h1 Fill in product name or code name
-        form#product-form(method="get")
-            input#product-code(type="text" placeholder="Product code/name" name="product")
-            button#product-submit(type="submit" form="product-form" value="submit") Search
