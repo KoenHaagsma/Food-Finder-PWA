@@ -12,6 +12,7 @@ The assignment is to convert the SPA that we made ([Food-Finder-SPA](https://git
       * [Checklist](###Checklist)
       * [Performance](###Performance)
       * [API](###API)
+      * [MoSCoW](###MoSCoW)
 -   [Activity Diagram](##Activity-Diagram)
 -   [Getting started](##Getting-started)
       * [Installation](##Installation)
@@ -60,6 +61,11 @@ Checklist for showing what is done and what still can be done.<br>
 
 ### 📈 Performance
 ![Lighthouse performance report](./readme-images/lighthouse_performance.PNG)
+How did i achieve this score:
+- Service worker with static and dynamic caching
+- Adding caching header
+- Compression middleware
+- Minifing CSS, JS
 
 ### 🔁 API
 The API used in this product is: [Healthy Food Checker - Open Food Facts API](https://world.openfoodfacts.org/files/api-documentation.html). The API has a lot of data about all foods that you can think off, you can search on different categories, products, barcodes etc.
