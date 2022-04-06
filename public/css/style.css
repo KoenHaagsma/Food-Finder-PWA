@@ -820,3 +820,17 @@ h1 {
 .page {
     margin-left: 0.5rem;
 }
+
+/* Offline */
+.offline {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.offline > img {
+    width: 4rem;
+    height: 4rem;
+}
