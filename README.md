@@ -24,7 +24,7 @@
 ### 🔮 Wishlist
 
 ### 📈 Performance
-![Lighthouse performance report](./readme-images/lighthouse_performance.png)
+![Lighthouse performance report](./readme-images/lighthouse_performance.PNG)
 
 ## 🔍 Getting started
 *Before you can start you need to follow the installation*
