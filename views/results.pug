@@ -28,10 +28,11 @@ block content
                                         b Nutrition grade:
                                             li= value.nutrition_grades
             if counter != 0
-                form(method="get" action="/results" class="page-form")
-                    input( type="hidden" name="product" value=placeholderProduct)
-                    label( for="page") Page
-                    input(type="number" id="page" name="counter" value=page + 1 placeholder=page min="1" max=totalPage required)
-                    button(type="submit") Go to page
+                if products.count != 0 
+                    form(method="get" action="/results" class="page-form")
+                        input( type="hidden" name="product" value=placeholderProduct)
+                        label( for="page") Page
+                        input(type="number" id="page" name="counter" value=page + 1 placeholder=page min="1" max=totalPage required)
+                        button(type="submit") Go to page
         .link-container
             a(href="/scanner") Scan product
