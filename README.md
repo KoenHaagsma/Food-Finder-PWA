@@ -26,6 +26,8 @@
 ### 📈 Performance
 ![Lighthouse performance report](./readme-images/lighthouse_performance.PNG)
 
+## ✴ Activity Diagram
+
 ## 🔍 Getting started
 *Before you can start you need to follow the installation*
 
