@@ -20,6 +20,10 @@
 
 ### ✔ Checklist
 
+### 🔮 Wishlist
+
+### 📈 Performance
+
 ## 🔍 Getting started
 *Before you can start you need to follow the installation*
 
@@ -32,7 +36,7 @@ git clone https://github.com/KoenHaagsma/Food-Finder-PWA.git
 ```
 3. Go to the cloned repository
 ```
-cd ../../TFood-Finder-PWA
+cd ../../Food-Finder-PWA
 ```
 4. Install all packages
 ```
@@ -42,7 +46,7 @@ npm install || npm i
 ```
 npm run dev
 ```
-6. Open de server and go to the browser: [Localhost](http://localhost:3000/). If this doesn't work change your port to another port
+6. Open de server and go to the browser: [Localhost:8000](http://localhost:8000/). If this doesn't work change your port to another port
 
 ## 📑 Sources
 
