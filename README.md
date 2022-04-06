@@ -10,7 +10,6 @@ The assignment is to convert the SPA that we made ([Food-Finder-SPA](https://git
       * [Built with](###Built-with)
       * [Features](###Features)
       * [Checklist](###Checklist)
-      * [Wishlist](###Wishlist)
       * [Performance](###Performance)
       * [API](###API)
 -   [Activity Diagram](##Activity-Diagram)
@@ -34,8 +33,28 @@ The project is built with Node.js, Express and Pug, also some smaller npm packag
 - Detail page and last but not least the app has a detail page where users can see if the product is healthy or not, it shows the nutritional grade and most nutritional values per 100gr, also an image of the product is provided.
 
 ### ✔ Checklist
+Checklist for showing what is done and what still can be done.<br>
+- [x] Scanning a product
+- [x] Show the details of a product
+- [x] Alternative way of searching for a product
+- [x] Fast way of searching for a product
+- [ ] Sorting list of searched products
+- [ ] Detailed loading states
+- [x] Easy experience with finding a product
+- [x] 404 if hash is not found
+- [ ] Lazy loading products if last product is reached
+- [ ] Loading state when needed
+- [x] Details on the detail page are useful
+- [ ] Alternative way provided if scanning takes to long
+- [ ] Buttons not clickable when nog needed
+- [ ] Sort on popularity
+- [ ] Sort on kcal
+- [ ] Sort on nutritional grade
+- [ ] Compare products
+- [ ] Alternative healthier product showed for searched product
+- [ ] Add products to a list
+- [ ] Show products that are added to the list
 
-### 🔮 Wishlist
 
 ### 📈 Performance
 ![Lighthouse performance report](./readme-images/lighthouse_performance.PNG)
@@ -43,6 +62,34 @@ The project is built with Node.js, Express and Pug, also some smaller npm packag
 ### 🔁 API
 The API used in this product is: [Healthy Food Checker - Open Food Facts API](https://world.openfoodfacts.org/files/api-documentation.html). The API has a lot of data about all foods that you can think off, you can search on different categories, products, barcodes etc.
 There is a lot more possible than that I knew until the last week of the project, I see a lot of possibilities that would enhance my application a lot more, I can still do this and I will do, check the [MoSCoW](###MoSCoW) for more information on what I still want to built.
+
+
+### 🙌 MoSCoW
+**Must have**
+- Users must be able to scan a product;
+- Users must be able to view the details of a product;
+- Users must be able to view useful details of a product on the detail page;
+- Users must have an alternative way to search for a product instead of scanning;
+- Users must have a fast way to scan/search (for) a product;
+- Users must have a way to see if the app is loading.
+
+**Should have**
+- Users should have an easy experience with finding a product;
+- Users should have another alternative showed if the scanning of a product takes too long;
+- Users should have a way to sort on more categories than the app sorts on now;
+- Users should not be able to click buttons that do nothing yet;
+- Users should have a way to see if a button is clickable or not;
+- Users should have a way to sort the list of searched products;
+
+**Could have**
+- Users could have a way to compare products to eachother;
+- Users could have a way to add products to a list;
+- Users could have a way to show added products.
+
+**Won't have**
+- Users won't have a way to register in the app;
+- Users won't have a way to login to the app;
+- Users won't have a way to scan with the native Barcode API.
 
 ## ✴ Activity Diagram
 
