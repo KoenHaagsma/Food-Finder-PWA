@@ -119,7 +119,7 @@ git clone https://github.com/KoenHaagsma/Food-Finder-PWA.git
 ```
 3. Go to the cloned repository
 ```
-cd ../../Food-Finder-PWA
+cd Food-Finder-PWA
 ```
 4. Install all packages
 ```
