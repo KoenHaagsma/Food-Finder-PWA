@@ -3,7 +3,7 @@
 ![Food Finder PWA Logo](./readme-images/Logo.png)
 
 ## 📂 Assignment
-The assignment is to convert the SPA that we made ([Food-Finder-SPA](https://github.com/KoenHaagsma/Food-Finder-SPA)) into a Progressive web app, also adding service worker to turn it into a PWA, finally we need to add performance optimalisations.
+The assignment is to convert the SPA that we made ([Food-Finder-PWA](https://github.com/KoenHaagsma/Food-Finder-PWA)) into a Progressive web app, also adding service worker to turn it into a PWA, finally we need to add performance optimalisations.
 
 ### Assignments
 - [Assignment 1](https://github.com/KoenHaagsma/Food-Finder-PWA/wiki/Exercise-1)
