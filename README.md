@@ -100,6 +100,7 @@ There is a lot more possible than that I knew until the last week of the project
 - Users won't have a way to scan with the native Barcode API.
 
 ## ✴ Activity Diagram
+![Acticity Diagram](./readme-images/activity_diagram.png)
 
 ## 🔍 Getting started
 *Before you can start you need to follow the installation*
