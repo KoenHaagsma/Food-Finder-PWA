@@ -136,8 +136,5 @@ npm run dev
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [minify](https://www.npmjs.com/package/minify)
 
-
-## 📑 Sources
-
 ## 🔖 License
 [![license](https://img.shields.io/github/license/DAVFoundation/captain-n3m0.svg?style=flat-square)]()
