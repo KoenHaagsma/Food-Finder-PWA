@@ -5,7 +5,9 @@
     "main": "app.js",
     "scripts": {
         "start": "nodemon app.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "minify": "npm run minify-js && npm run minify-css",
+        "minify-js": "minify ./public/js/main.js > ./public/js/main.min.js && minify ./public/js/detect.js > ./public/js/detect.min.js && minify ./public/service-worker.js > ./public/service-worker.min.js",
+        "minify-css": "minify ./public/css/style.css > ./public/css/style.min.css"
     },
     "repository": {
         "type": "git",
@@ -18,14 +20,19 @@
     ],
     "author": "Koen Haagsma",
     "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/KoenHaagsma/Food-Finder-PWA/issues"
+    },
+    "homepage": "https://github.com/KoenHaagsma/Food-Finder-PWA",
     "dependencies": {
+        "compression": "^1.7.4",
         "dotenv": "^16.0.0",
         "express": "^4.17.3",
         "node-fetch": "^2.6.7",
-        "pug": "^3.0.2",
-        "request": "^2.88.2"
+        "pug": "^3.0.2"
     },
     "devDependencies": {
+        "minify": "^8.0.4",
         "nodemon": "^2.0.15"
     }
 }

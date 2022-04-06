@@ -5,18 +5,31 @@ block content
     section.section.details
         section.content
             div.img-container
-                img
-                p
+                img(src=product.image_url)
+                p=product.nutrition_grades
             div.details-container
-                h1
-                h2
+                h1= product.brands
+                h2= product.quantitiy
                 div.nutriments-container
-                    article 
-                    article 
-                    article 
                     article
+                        p= product.nutriments.energy
+                        p KCAL
+                    article 
+                        p= product.nutriments.fat + product.nutriments.fat_unit
+                        p Fat
+                    article 
+                        p= product.nutriments.proteins + product.nutriments.proteins_unit
+                        p Proteins                  
+                    article
+                        p= product.nutriments.sugars + product.nutriments.sugars_unit
+                        p Sugars                  
         section.rest-details 
             h3 Values
             ul 
-                each nutrient in 
-        div
+                each key, value in product.nutrient_levels
+                    li.nutrients-li
+                        span=value
+                        span=key
+
+        .link-container 
+            a(href="/scanner") Scan again

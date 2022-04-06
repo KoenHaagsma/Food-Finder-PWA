@@ -1,8 +1,8 @@
-import { detect } from './detect.js';
+import { detect } from './detect.min.js';
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function () {
-        navigator.serviceWorker.register('/js/service-worker.js').then(function (registration) {
+        navigator.serviceWorker.register('service-worker.min.js').then(function (registration) {
             return registration.update();
         });
     });
@@ -13,6 +13,12 @@ if (window.location.pathname === '/scanner') {
     const div = document.querySelector('.container');
     detect.start(`.${div.className}`, (result) => {
         console.log(result);
-        location.href = `/details/${result}`;
+        window.location.href = `/details/${result}`;
     });
+
+    buttons[0].onclick = (event) => {
+        event.preventDefault();
+        detect.stop(`.${div.className}`);
+        window.location.href = `/manual`;
+    };
 }
