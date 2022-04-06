@@ -60,7 +60,7 @@ Checklist for showing what is done and what still can be done.<br>
 
 
 ### 📈 Performance
-![Lighthouse performance report](./readme-images/lighthouse_performance.PNG)
+![Lighthouse performance report](./readme-images/lighthouse_performance.PNG)<br>
 How did i achieve this score:
 - Service worker with static and dynamic caching
 - Adding caching header
