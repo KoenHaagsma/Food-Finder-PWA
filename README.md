@@ -38,6 +38,8 @@ Checklist for showing what is done and what still can be done.<br>
 - [x] Show the details of a product
 - [x] Alternative way of searching for a product
 - [x] Fast way of searching for a product
+- [x] Service Worker
+- [x] Performance optimising
 - [ ] Sorting list of searched products
 - [ ] Detailed loading states
 - [x] Easy experience with finding a product
