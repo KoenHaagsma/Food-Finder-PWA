@@ -1,5 +1,6 @@
 
 # ⚙ Food Finder PWA
+![Food Finder PWA Logo](./readme-images/Logo.png)
 
 ## 📂 Assignment
 
@@ -23,6 +24,7 @@
 ### 🔮 Wishlist
 
 ### 📈 Performance
+![Lighthouse performance report](./readme-images/lighthouse_)
 
 ## 🔍 Getting started
 *Before you can start you need to follow the installation*
